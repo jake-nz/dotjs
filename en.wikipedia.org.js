@@ -16,10 +16,10 @@
         }
 
         // remove stupid units in parenthasis
-        text = text.replace(/\s?\(.*?((cubic|square)\s)?(inch|inches|foot|feet|ft|yard|mile|mi|lb|pound)s?\)/ig, "");
+        text = text.replace(/\s?\(.*?((cubic|square)\s)?(inch|inches|foot|feet|ft|yard|mile|mi|lb|pound|°F)s?\)/ig, "");
 
         // remove nonsence units where they preced real ones in parenthasis, remove parenthasis
-        text = text.replace(/(\d+\s?((cubic|square)\s)?(inch|inches|foot|feet|ft|yard|mile|mi|lb|pound)s?\s)?\d+\s?((cubic|square)\s)?(inch|inches|foot|feet|ft|yard|mile|mi|lb|pound)s?\s?\((.*?)\)/ig, "$4");
+        text = text.replace(/\d+\s?((cubic|square)\s)?(inch|inches|foot|feet|ft|yard|mile|mi|lb|pound|°F)s?\s?\((.*?)\)/ig, "$4");
 
         node.replaceWholeText(text);
     }
